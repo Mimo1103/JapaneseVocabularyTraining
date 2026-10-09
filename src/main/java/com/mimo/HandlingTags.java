@@ -1,3 +1,5 @@
+package com.mimo;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
