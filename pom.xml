@@ -4,7 +4,7 @@
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.mim0</groupId>
+    <groupId>com.mimo</groupId>
     <artifactId>japanese-vocab</artifactId>
     <version>1.0</version>
     <name>JapaneseVocab</name>
