@@ -1174,13 +1174,20 @@ public static void initializingAllVocab() {
 
     new Vocabulary("海", "sea", "S3U13");
     new Vocabulary("サーフィン", "surf", "S3U13");
-    new Vocabulary("イルカ", "dolphin", "S3U13");
-    new Vocabulary("五月", "May", "S3U13");
+    new Vocabulary("イルカ", "dolphin", "S3U13, animal");
+    new Vocabulary("五月", "May", "S3U13, month");
     new Vocabulary("メール", "email", "S3U13");
     new Vocabulary("まどがわのせき", "window seat", "S3U13");
-    new Vocabulary("しらべます", "(to) check sth.", "S3U13");
+    new Vocabulary("しらべます", "(to) check sth.", "S3U13, verb");
     new Vocabulary("ねだん", "price, cost", "S3U13");
-    new Vocabulary("XX", "XX", "S3U13");
+new Vocabulary("まあまあ", "So so, not bad", "S3U13");
+new Vocabulary("げんきん", "cash", "S3U13");
+new Vocabulary("はらいます", "(to) pay sth.", "S3U13, verb");
+new Vocabulary("本", "tree", "S3U13");
+new Vocabulary("うみがめ", "sea turtle", "S3U13, animal");
+new Vocabulary("車", "car", "S3U13");
+new Vocabulary("けしき", "scenery", "S3U13");
+new Vocabulary("XX", "XX", "S3U13");
 
 
     System.out.println("Writing all JSON files: 100%");
