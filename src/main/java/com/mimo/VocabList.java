@@ -27,6 +27,10 @@ public class VocabList {
         //animal
         //month
         //time
+        //kanjireplace
+        //surname
+        //firstname
+        //personname
 
         //cloth
         //sport
@@ -38,7 +42,7 @@ public class VocabList {
         //profession
         //hobby
         //furniture
-        //kanjireplace
+
 
         System.out.println("Writing all JSON files: 0%");
 
@@ -159,7 +163,7 @@ public class VocabList {
         Vocabulary MOTHER = new Vocabulary("お母さん", "(your) mom, mother, mom", "hiragana,kanji, family");
         Vocabulary DAD = new Vocabulary("お父さん", "(your) dad, (your) father, dad", "hiragana,kanji, family");
         Vocabulary ISIT = new Vocabulary("か", "or, is it?", "particle");
-        Vocabulary BUY_HIR = new Vocabulary("かい", "(to) buy sth.", "hiragana, verb");
+        Vocabulary BUY_HIR = new Vocabulary("かい", "(to) buy sth.", "hiragana, verb, kanjireplace");
         Vocabulary TICKETGATE = new Vocabulary("かいさつ", "ticket gate", "hiragana");
         Vocabulary COMPANY = new Vocabulary("かいしゃ", "company, work, office", "hiragana");
         Vocabulary STAIRS = new Vocabulary("かいだん", "stairs", "hiragana");
@@ -218,7 +222,7 @@ public class VocabList {
         Vocabulary UNWELL = new Vocabulary("ぐあいがわるい", "(to) feel unwell", "hiragana, verb");
         Vocabulary APPROXIMATELY = new Vocabulary("ぐらい", "approximately", "hiragana");
         Vocabulary POLICE = new Vocabulary("けいさつ", "police", "hiragana");
-        Vocabulary KEN = new Vocabulary("けん", "Ken", "hiragana");
+        Vocabulary KEN = new Vocabulary("けん", "Ken", "hiragana, firstname, personname");
         Vocabulary HEALTHY = new Vocabulary("けんこうてき", "healthy", "hiragana");
         Vocabulary LIVELY = new Vocabulary("げんき", "lively", "hiragana");
         Vocabulary LANGUAGE = new Vocabulary("げんご", "language", "hiragana");
@@ -286,7 +290,7 @@ public class VocabList {
         Vocabulary EXAMINATIONROOM = new Vocabulary("しんさつしつ", "examination room", "hiragana");
         Vocabulary SHINJUKU = new Vocabulary("しんじゅく", "Shinjuku", "hiragana");
         Vocabulary WELLHEARTED = new Vocabulary("しんせつ", "kind, well-hearted", "hiragana");
-        Vocabulary OCLOCK_HIR = new Vocabulary("じ", "o'clock", "hiragana, time");
+        Vocabulary OCLOCK_HIR = new Vocabulary("じ", "o'clock", "hiragana, time, kanjireplace");
         Vocabulary VENDINGMACHINE = new Vocabulary("じはんき", "vending machine", "hiragana");
         Vocabulary WELLTHEN = new Vocabulary("じゃあ", "well then, well, see you", "hiragana");
         Vocabulary POTATO = new Vocabulary("じゃがいも", "potato", "hiragana, food, vegetable");
@@ -323,16 +327,16 @@ public class VocabList {
         Vocabulary TAIKO = new Vocabulary("たいこ", "taiko", "hiragana");
         Vocabulary HARD = new Vocabulary("たいへん", "hard", "hiragana");
         Vocabulary TAIWAN = new Vocabulary("たいわん", "Taiwan", "hiragana, country");
-        Vocabulary EXPENSIVE_HIR = new Vocabulary("たかい", "expensive", "hiragana");
+        Vocabulary EXPENSIVE_HIR = new Vocabulary("たかい", "expensive", "hiragana, kanjireplace");
         Vocabulary MANY = new Vocabulary("たくさん", "many", "hiragana");
         Vocabulary ANDTHEOTHERS = new Vocabulary("たち", "and the others", "hiragana");
         Vocabulary BULDING = new Vocabulary("たてもの", "building", "hiragana");
         Vocabulary SHELF = new Vocabulary("たな", "shelf", "hiragana");
-        Vocabulary TANAKA_HIR = new Vocabulary("たなか", "Tanaka", "hiragana");
+        Vocabulary TANAKA_HIR = new Vocabulary("たなか", "Tanaka", "hiragana, kanjireplace, surname, personname");
         Vocabulary FUN = new Vocabulary("たのしい", "fun", "hiragana");
         Vocabulary SMOKE = new Vocabulary("たばこをすいます", "(to) smoke", "hiragana, verb");
         Vocabulary PROBABLY = new Vocabulary("たぶん", "probably", "hiragana");
-        Vocabulary EAT_HIR = new Vocabulary("たべます", "(to) eat", "hiragana, verb");
+        Vocabulary EAT_HIR = new Vocabulary("たべます", "(to) eat", "hiragana, verb, kanjireplace");
         Vocabulary ONION = new Vocabulary("たまねぎ", "onion", "hiragana, food, vegetable");
         Vocabulary BIRTHDAY = new Vocabulary("たんじょうび", "birthday", "hiragana, time");
         Vocabulary UNIVERSITY = new Vocabulary("だいがく", "university", "hiragana");
@@ -340,7 +344,7 @@ public class VocabList {
         Vocabulary LOVE = new Vocabulary("たいすき", "(to) love sth.", "hiragana, verb");
         Vocabulary WHO = new Vocabulary("だれ", "who", "hiragana");
         Vocabulary HEATER = new Vocabulary("だんぼう", "heater", "hiragana");
-        Vocabulary SMALL_HIR = new Vocabulary("ちいさい", "small", "hiragana");
+        Vocabulary SMALL_HIR = new Vocabulary("ちいさい", "small", "hiragana, kanjireplace");
         Vocabulary UNDERGROUND = new Vocabulary("ちか", "underground", "hiragana");
         Vocabulary CLOSE = new Vocabulary("ちかい", "near, close", "hiragana");
         Vocabulary NEAR = new Vocabulary("ちかく", "near", "hiragana");
@@ -417,11 +421,11 @@ public class VocabList {
         Vocabulary PET = new Vocabulary("なでます", "(to) pet sth., (to) stroke sth.", "hiragana, verb");
         Vocabulary HOTPOT = new Vocabulary("なべ", "hot pot, pot", "hiragana, food");
         Vocabulary RAW_HIR = new Vocabulary("なま", "raw", "hiragana");
-        Vocabulary WHATTIME_HIR = new Vocabulary("なんじ", "what time", "hiragana, time");
+        Vocabulary WHATTIME_HIR = new Vocabulary("なんじ", "what time", "hiragana, time, kanjireplace");
         Vocabulary THROUGH = new Vocabulary("に", "through, made, with", "hiragana");
         Vocabulary HEAR = new Vocabulary("にききます", "(to) listen, (to) hear, (to) ask", "hiragana, verb");
         Vocabulary LIVELY_PLA = new Vocabulary("にぎやか", "lively", "hiragana");
-        Vocabulary MEAT_HIR = new Vocabulary("にく", "meat", "hiragana, food");
+        Vocabulary MEAT_HIR = new Vocabulary("にく", "meat", "hiragana, food, kanjireplace");
         Vocabulary WESTEXIT = new Vocabulary("にしぐち", "west exit", "hiragana");
         Vocabulary WILLHAVE = new Vocabulary("にします", "(to) have, (to) make", "hiragana, verb");
         Vocabulary LIVEIN = new Vocabulary("にすんでいます", "(to) live in sth.", "hiragana, verb, kanjireplace");
@@ -430,9 +434,9 @@ public class VocabList {
         Vocabulary CALL = new Vocabulary("にでんわします", "(to) call, (to) telephone, (to) phone", "hiragana, verb");
         Vocabulary STAY = new Vocabulary("にとまります", "(to) stay swh., (to) stop over, (to) lodge", "hiragana, verb");
         Vocabulary LINEUP = new Vocabulary("にならびます", "(to) line up, (to) stand in line, (to) queue", "hiragana, verb");
-        Vocabulary GETON_HIR = new Vocabulary("にのります", "(to) get on sth./swh., (to) take sth., (to) ride sth.", "hiragana, verb");
+        Vocabulary GETON_HIR = new Vocabulary("にのります", "(to) get on sth./swh., (to) take sth., (to) ride sth.", "hiragana, verb, kanjireplace");
         Vocabulary ENROLL = new Vocabulary("にはいります", "(to) take sth., (to) enroll swh.", "hiragana, verb");
-        Vocabulary JAPAN_HIR = new Vocabulary("にほん", "Japan", "hiragana");
+        Vocabulary JAPAN_HIR = new Vocabulary("にほん", "Japan", "hiragana, kanjireplace");
         Vocabulary JAPANESEPERSON = new Vocabulary("にほんじん", "Japanese Person", "hiragana");
         Vocabulary GOBACK = new Vocabulary("にもどります", "(to) return swh., (to) go back swh./to sth., (to) come back swh.", "hiragana, verb");
         Vocabulary RESERVE = new Vocabulary("によやくをいれます", "(to) reverse sth., (to) book sth., (to) make a reservation", "hiragana, verb");
@@ -446,7 +450,7 @@ public class VocabList {
         Vocabulary FOR = new Vocabulary("の", "for, 's, one", "hiragana");
         Vocabulary CLOSETO = new Vocabulary("のちかく", "close to sth., near sth.", "hiragana");
         Vocabulary WHICHPART = new Vocabulary("のどこ", "which part, where", "hiragana");
-        Vocabulary DRINK_HIR = new Vocabulary("のみます", "(to) drink sth.", "hiragana, verb");
+        Vocabulary DRINK_HIR = new Vocabulary("のみます", "(to) drink sth.", "hiragana, verb, kanjireplace");
         Vocabulary TRANSFER = new Vocabulary("のりかえ", "transfer", "hiragana");
         Vocabulary REGARDING = new Vocabulary("は", "is, with, regarding", "hiragana");
         Vocabulary YES = new Vocabulary("はい", "yes", "hiragana");
@@ -465,7 +469,7 @@ public class VocabList {
         Vocabulary HARAJUKU = new Vocabulary("はらじゅく", "Harajuku", "hiragana");
         Vocabulary SPRING = new Vocabulary("はる", "spring", "hiragana");
         Vocabulary CLEAR = new Vocabulary("はれ", "clear", "hiragana");
-        Vocabulary THIRTY_HIR = new Vocabulary("はん", "thirty", "hiragana");
+        Vocabulary THIRTY_HIR = new Vocabulary("はん", "thirty", "hiragana, kanjireplace");
         Vocabulary NUMBER = new Vocabulary("ばんごう", "number", "hiragana");
         Vocabulary DINNER = new Vocabulary("ばんごはん", "dinner", "hiragana, food");
         Vocabulary LIGHTUP = new Vocabulary("ひかります", "(to) light sth. up, sth. lights up", "hiragana, verb");
@@ -475,7 +479,7 @@ public class VocabList {
         Vocabulary PERSON_HIR = new Vocabulary("ひと", "person", "hiragana, kanjireplace");
         Vocabulary ALONE = new Vocabulary("ひとりで", "alone", "hiragana");
         Vocabulary FREE = new Vocabulary("ひま", "free (on time), available", "hiragana");
-        Vocabulary LUNCH_HIR = new Vocabulary("ひるごはん", "lunch", "hiragana, food");
+        Vocabulary LUNCH_HIR = new Vocabulary("ひるごはん", "lunch", "hiragana, food, kanjireplace");
         Vocabulary LUNCHBREAK = new Vocabulary("ひる休み", "lunch break", "hiragana, kanji, time");
         Vocabulary WIDE = new Vocabulary("ひろい", "wide, spacious, big", "hiragana");
         Vocabulary PLAZA = new Vocabulary("ひろば", "plaza", "hiragana");
@@ -498,9 +502,9 @@ public class VocabList {
         Vocabulary BOOKSHELF = new Vocabulary("ほんだな", "bookshelf", "hiragana");
         Vocabulary REALLY = new Vocabulary("ほんとうに", "really", "hiragana");
         Vocabulary HAT = new Vocabulary("ぼうし", "hat", "hiragana");
-        Vocabulary EVERYMORNING_HIR = new Vocabulary("まいあさ", "every morning", "hiragana, time");
-        Vocabulary EVERYWEEK_HIR = new Vocabulary("まいしゅう", "every week", "hiragana, time");
-        Vocabulary EVERYDAY_HIR = new Vocabulary("まいばん", "every day", "hiragana, time");
+        Vocabulary EVERYMORNING_HIR = new Vocabulary("まいあさ", "every morning", "hiragana, time, kanjireplace");
+        Vocabulary EVERYWEEK_HIR = new Vocabulary("まいしゅう", "every week", "hiragana, time, kanjireplace");
+        Vocabulary EVERYDAY_HIR = new Vocabulary("まいばん", "every day", "hiragana, time, kanjireplace");
         Vocabulary FRONT = new Vocabulary("まえ", "front", "hiragana, kanjireplace");
         Vocabulary SERIOUS = new Vocabulary("まじめ", "serious", "hiragana");
         Vocabulary FIRST = new Vocabulary("まず", "first", "hiragana, time");
@@ -516,7 +520,7 @@ public class VocabList {
         Vocabulary MANGA = new Vocabulary("まんが", "manga", "hiragana");
         Vocabulary MIDDLE = new Vocabulary("まんなか", "middle", "hiragana");
         Vocabulary MANDARIN = new Vocabulary("みかん", "mandarin", "hiragana, food, fruit");
-        Vocabulary WATER_HIR = new Vocabulary("みず", "water", "hiragana, drink");
+        Vocabulary WATER_HIR = new Vocabulary("みず", "water", "hiragana, drink, kanjireplace");
         Vocabulary STORE = new Vocabulary("みせ", "store", "hiragana");
         Vocabulary MISOSOUP = new Vocabulary("みそしる", "miso soup", "hiragana");
         Vocabulary STREET = new Vocabulary("みち", "street", "hiragana");
@@ -540,9 +544,9 @@ public class VocabList {
         Vocabulary GOAT = new Vocabulary("やぎ", "goat", "hiragana");
         Vocabulary VEGETABLE = new Vocabulary("やさい", "vegetable", "hiragana, food, vegetable");
         Vocabulary KIND = new Vocabulary("やさしい", "kind, easy, nice", "hiragana");
-        Vocabulary CHEAP_HIR = new Vocabulary("やすい", "cheap, inexpensive", "hiragana");
+        Vocabulary CHEAP_HIR = new Vocabulary("やすい", "cheap, inexpensive", "hiragana, kanjireplace");
         Vocabulary RENT = new Vocabulary("やちん", "rent", "hiragana");
-        Vocabulary YAMAGUCHI = new Vocabulary("やまぐち", "Yamaguchi", "hiragana");
+        Vocabulary YAMAGUCHI = new Vocabulary("やまぐち", "Yamaguchi", "hiragana, kanjireplace, surname, personname");
         Vocabulary QUIT = new Vocabulary("やめます", "(to) quit sth., (to) leave sth., (to) stop sth.", "hiragana, verb");
         Vocabulary FAMOUS = new Vocabulary("ゆうめい", "famous", "hiragana");
         Vocabulary SNOW = new Vocabulary("ゆき", "snow", "hiragana");
@@ -579,7 +583,7 @@ public class VocabList {
         Vocabulary American_PER = new Vocabulary("アメリカじん", "American", "katakana");
         Vocabulary Alex = new Vocabulary("アレックス", "Alex", "katakana");
         Vocabulary album = new Vocabulary("アルバム", "album", "katakana");
-        Vocabulary Andrew = new Vocabulary("アンドリュー", "Andrew", "katakana");
+        Vocabulary Andrew = new Vocabulary("アンドリュー", "Andrew", "katakana, firstname, personname");
         Vocabulary allergy = new Vocabulary("アレルギー", "allergy", "katakana");
         Vocabulary artist = new Vocabulary("アーティスト", "artist", "katakana");
         Vocabulary Britain = new Vocabulary("イギリス", "Britain, the United Kingdom, British", "katakana, country");
@@ -683,7 +687,7 @@ public class VocabList {
         Vocabulary taxi = new Vocabulary("タクシー", "taxi", "katakana");
         Vocabulary tablet = new Vocabulary("タブレット", "tablet", "katakana");
         Vocabulary terminal = new Vocabulary("ターミナル", "terminal", "katakana");
-        Vocabulary Daniel = new Vocabulary("ダニエル", "Daniel", "katakana");
+        Vocabulary Daniel = new Vocabulary("ダニエル", "Daniel", "katakana, firstname, personname");
         Vocabulary dance = new Vocabulary("ダンス", "dance", "katakana");
         Vocabulary chess = new Vocabulary("チッス", "chess", "katakana");
         Vocabulary checkout = new Vocabulary("チェックアウトします", "(to) checkout of sth./swh., checkout, check out", "katakana, hiragana, verb");
@@ -932,7 +936,7 @@ public class VocabList {
         Vocabulary small = new Vocabulary("小さい", "small, little", "kanji, hiragana");
         Vocabulary slightly = new Vocabulary("少し", "a bit, slightly, a slight", "kanji, hiragana");
         Vocabulary mountain = new Vocabulary("山", "mountain", "kanji");
-        Vocabulary Yamaguchi = new Vocabulary("山口", "Yamaguchi", "kanji");
+        Vocabulary Yamaguchi = new Vocabulary("山口", "Yamaguchi", "kanji, surname, personname");
         Vocabulary Yamada = new Vocabulary("山田", "Yamada", "kanji");
         Vocabulary left = new Vocabulary("左", "left", "kanji");
         Vocabulary NEW = new Vocabulary("新しい", "new", "kanji, hiragana");
@@ -957,7 +961,7 @@ public class VocabList {
         Vocabulary Wednesday = new Vocabulary("水曜日", "Wednesday", "kanji, time");
         Vocabulary Tuesday = new Vocabulary("火曜日", "Tuesday", "kanji, time");
         Vocabulary father = new Vocabulary("父", "father", "kanji, family");
-        Vocabulary Tanaka = new Vocabulary("田中", "Tanaka", "kanji");
+        Vocabulary Tanaka = new Vocabulary("田中", "Tanaka", "kanji, surname, personname");
         Vocabulary HUNDRED = new Vocabulary("百", "hundred, a hundred, 100", "kanji");
         Vocabulary HUNDREDYENSHOP = new Vocabulary("百円ショップ", "100-yen shop", "kanji, katakana");
         Vocabulary me = new Vocabulary("私", "I, me", "kanji");
@@ -1031,7 +1035,7 @@ public class VocabList {
         new Vocabulary("まあまあ", "So so, not bad", "s3u13, hiragana");
         new Vocabulary("げんきん", "cash", "s3u13, hiragana");
         new Vocabulary("はらいます", "(to) pay sth.", "s3u13, verb, hiragana");
-        new Vocabulary("本", "tree", "s3u13, kanji");
+        new Vocabulary("木", "tree", "s3u13, kanji");
         new Vocabulary("うみがめ", "sea turtle", "s3u13, animal, hiragana");
         new Vocabulary("車", "car", "s3u13, kanji");
         new Vocabulary("けしき", "scenery", "s3u13, hiragana");
@@ -1039,6 +1043,34 @@ public class VocabList {
         new Vocabulary("パイナップル", "pineapple", "s3u13, katakana, food, fruit");
         new Vocabulary("つめたい", "cold", "s3u13, hiragana, temperature");
         new Vocabulary("ストロー", "straw", "s3u13, katakana");
+
+        new Vocabulary("しま", "island", "s3u14, hiragana");
+        new Vocabulary("クルーズ", "cruise", "s3u14, katakana");
+        new Vocabulary("みなと", "port, harbor", "s3u14, hiragana");
+        new Vocabulary("ふくおか", "Fukuoka", "s3u14, hiragana");
+        new Vocabulary("ツアー", "tour", "s3u14, katakana");
+        new Vocabulary("どうでしたか", "how was it?", "s3u14, hiragana");
+        new Vocabulary("ふね", "ship", "s3u14, hiragana");
+        new Vocabulary("みずぎ", "swimsuit", "s3u14, cloth, hiragana");
+        new Vocabulary("いろいろ", "various, all kinds of", "s3u14, hiragana");
+        new Vocabulary("まわります", "(to) visit sth., (to) go around sth.", "s3u14, verb, hiragana");
+        new Vocabulary("ハンバーガー", "hamburger", "s3u14, food, katakana");
+        new Vocabulary("ロブスター", "lobster", "s3u14, animal, food, katakana");
+        new Vocabulary("ご飯", "meal, food", "s3u14, food, hiragana, kanji");
+        new Vocabulary("けっこう", "quite a bit, quite, pretty", "s3u14, hiragana");
+        new Vocabulary("食べほうだい", "all-you-can-eat", "s3u14, hiragana, kanji");
+        new Vocabulary("ミニゴルフ", "minigolf", "s3u14, katakana, sport");
+        new Vocabulary("くもり", "cloudy", "s3u14, weather, hiragana");
+        new Vocabulary("アトラクション", "attraction, show", "s3u14, katakana");
+        new Vocabulary("何日間", "how many days?", "s3u14, kanji");
+        new Vocabulary("リゾート", "resort", "s3u14, katakana");
+        new Vocabulary("そふぼ", "grandparent", "s3u14, family, hiragana");
+        new Vocabulary("かいがい", "overseas, abroad", "s3u14, hiragana");
+        new Vocabulary("一週間", "one week (long), a week (long)", "s3u14, time, kanji");
+        new Vocabulary("こんど", "next time", "s3u14, hiragana, time");
+
+
+
 
 
         System.out.println("Writing all JSON files: 100%");
