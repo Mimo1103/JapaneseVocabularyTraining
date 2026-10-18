@@ -26,9 +26,14 @@ public static void beginTraining(HashMap<String, List<String>> vocabularyList) {
     ArrayList<String> lastUsedVocabs = new ArrayList<>();
     String startLanguage = WriteJSON.getSettings().get("startLanguage");
 
+    int maxVocabBeforeRepeat = 0;
+    if(size > 10) {
+        maxVocabBeforeRepeat = (size * 0.2 > 10) ? (int) Math.round(size * 0.2) : 10;
+    }
+    System.out.println("Max Vocab before repeat:" + maxVocabBeforeRepeat);
+
     Random rand = new Random();
     rand.setSeed(System.currentTimeMillis());
-    int wordCounter = 0;
     while (true) {
         int randomVocabIndex = rand.nextInt(size);
         String japaneseMeaning = vocabularyList.keySet().toArray()[randomVocabIndex].toString();
@@ -50,12 +55,8 @@ public static void beginTraining(HashMap<String, List<String>> vocabularyList) {
                 printLinearLine();
             }
 
-            if(lastUsedVocabs.size() > 5) {
-                lastUsedVocabs.remove(wordCounter);
-                wordCounter++;
-                if(wordCounter > 5) {
-                    wordCounter = 0;
-                }
+            if(lastUsedVocabs.size() >= maxVocabBeforeRepeat) {
+                lastUsedVocabs.remove(0);
             }
         }
     }
