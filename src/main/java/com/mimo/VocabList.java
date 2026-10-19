@@ -1092,11 +1092,6 @@ public class VocabList {
         new Vocabulary("書きます", "(to) write sth.", "s3u15, kanji, hiragana, verb");
         new Vocabulary("おきゃくさん", "guests, customers", "s3u15, hiragana");
 
-
-
-
-
-
         System.out.println("Writing all JSON files: 100%");
     }
 }

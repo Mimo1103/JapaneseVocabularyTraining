@@ -28,7 +28,7 @@ public class HandlingTags {
         //check if vocab is allowed to be trained on
         if (Vocabulary.ID != 0) {
             ObjectMapper mapper = new ObjectMapper();
-            for (int i = 1; i < Vocabulary.ID; i++) {
+            for (int i = 1; i <= Vocabulary.ID; i++) {
                 String filepath = path + i + ".json";
 
 
