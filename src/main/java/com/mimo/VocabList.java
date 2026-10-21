@@ -69,7 +69,7 @@ public class VocabList {
         Vocabulary HANGOUT = new Vocabulary("あそびます", "(to) hang out, (to) play with sth.", "hiragana, verb");
         Vocabulary WARM = new Vocabulary("あたたかい", "warm", "hiragana");
         Vocabulary HOT = new Vocabulary("あつい", "hot, thick", "hiragana");
-        Vocabulary AFTER = new Vocabulary("あと", "after", "hiragana, time");
+        Vocabulary AFTER = new Vocabulary("あと", "after", "hiragana, time, kanjireplace");
         Vocabulary OLDERBROTHER_MY = new Vocabulary("あに", "my older brother", "hiragana, family");
         Vocabulary OLDERSISTER = new Vocabulary("あね", "older sister", "hiragana, family");
         Vocabulary THOSE = new Vocabulary("あの", "those, that (over there), ah", "hiragana");
@@ -196,7 +196,7 @@ public class VocabList {
         Vocabulary ARTICLE = new Vocabulary("かじ", "article", "hiragana");
         Vocabulary DIRTY = new Vocabulary("きたない", "dirty, foul", "hiragana");
         Vocabulary TICKET = new Vocabulary("きっぷ", "ticket", "hiragana");
-        Vocabulary YESTERDAY = new Vocabulary("きのう", "yesterday", "hiragana, time");
+        Vocabulary YESTERDAY = new Vocabulary("きのう", "yesterday", "hiragana, time, kanjireplace");
         Vocabulary WEAR = new Vocabulary("きます", "(to) wear sth.", "hiragana, verb");
         Vocabulary AMBULANCE = new Vocabulary("きゅきゅしゃ", "ambulance", "hiragana");
         Vocabulary TODAY = new Vocabulary("きょう", "today", "hiragana, time, kanjireplace");
@@ -234,7 +234,7 @@ public class VocabList {
         Vocabulary THESE = new Vocabulary("この", "this, these, that's", "hiragana");
         Vocabulary THISAREA = new Vocabulary("このあたり", "this area", "hiragana");
         Vocabulary AREA = new Vocabulary("あたり", "area", "hiragana");
-        Vocabulary AFTERTHIS = new Vocabulary("このあと", "after this", "hiragana");
+        Vocabulary AFTERTHIS = new Vocabulary("このあと", "after this", "hiragana, kanjireplace");
         Vocabulary FLOUR = new Vocabulary("こむぎこ", "flour", "hiragana");
         Vocabulary THIS_ = new Vocabulary("これ", "this, these, this (one)", "hiragana");
         Vocabulary FROMNOWON = new Vocabulary("これから", "from now on, starting right now", "hiragana");
@@ -382,7 +382,7 @@ public class VocabList {
         Vocabulary TRAIN = new Vocabulary("でんしゃ", "train", "hiragana, kanjireplace");
         Vocabulary MICROWAVEOVEN = new Vocabulary("でんしレンジ", "microwave oven", "hiragana, katakana");
         Vocabulary BATTERY = new Vocabulary("でんち", "battery", "hiragana");
-        Vocabulary TELEPHONE = new Vocabulary("でんわ", "telephone", "hiragana");
+        Vocabulary TELEPHONE = new Vocabulary("でんわ", "telephone", "hiragana, kanjireplace");
         Vocabulary PHONENUMBER = new Vocabulary("でんわばんごう", "phone number", "hiragana");
         Vocabulary AND = new Vocabulary("と", "and", "hiragana");
         Vocabulary SOYMILK = new Vocabulary("とうにゅ", "soy milk", "hiragana, drink");
@@ -431,7 +431,7 @@ public class VocabList {
         Vocabulary LIVEIN = new Vocabulary("にすんでいます", "(to) live in sth.", "hiragana, verb, kanjireplace");
         Vocabulary ARRIVE = new Vocabulary("につきます", "(to) arrive swh.", "hiragana, verb");
         Vocabulary APPEAR = new Vocabulary("にでます", "(to) appear swh., (to) attend sth., (to) go out", "hiragana, verb");
-        Vocabulary CALL = new Vocabulary("にでんわします", "(to) call, (to) telephone, (to) phone", "hiragana, verb");
+        Vocabulary CALL = new Vocabulary("にでんわします", "(to) call, (to) telephone, (to) phone", "hiragana, verb, kanjireplace");
         Vocabulary STAY = new Vocabulary("(に)とまります", "(to) stay swh., (to) stop over, (to) lodge", "hiragana, verb");
         Vocabulary LINEUP = new Vocabulary("にならびます", "(to) line up, (to) stand in line, (to) queue", "hiragana, verb");
         Vocabulary GETON_HIR = new Vocabulary("にのります", "(to) get on sth./swh., (to) take sth., (to) ride sth.", "hiragana, verb, kanjireplace");
@@ -876,7 +876,7 @@ public class VocabList {
         Vocabulary tonight = new Vocabulary("今夜", "tonight", "kanji, time");
         Vocabulary today = new Vocabulary("今日", "today", "kanji, time");
         Vocabulary BREAK_KAN = new Vocabulary("休み", "break", "kanji, hiragana");
-        Vocabulary REST = new Vocabulary("休みます", "(to) rest", "kanji, hiragana, verb");
+        Vocabulary REST = new Vocabulary("休みます", "(to) rest, (to) be absent from sth.", "kanji, hiragana, verb");
         Vocabulary MEETUP = new Vocabulary("会います", "(to) meetup swh.", "kanji, hiragana, verb");
         Vocabulary live = new Vocabulary("住んでいます", "(to) live swh.", "kanji, hiragana, verb");
         Vocabulary what = new Vocabulary("何", "what", "kanji");
@@ -1091,6 +1091,28 @@ public class VocabList {
         new Vocabulary("かならず", "certainly, surely, definitely", "s3u15, hiragana");
         new Vocabulary("書きます", "(to) write sth.", "s3u15, kanji, hiragana, verb");
         new Vocabulary("おきゃくさん", "guests, customers", "s3u15, hiragana");
+
+        new Vocabulary("雨", "rain", "s3u16, kanji, weather");
+        new Vocabulary("ねつ", "fever, high temperature, temperature", "s3u16, hiragana");
+        new Vocabulary("かぜ", "a cold", "s3u16, hiragana");
+        new Vocabulary("ひきます", "(to) catch an illness, (to) get an illness", "s3u16, hiragana, verb");
+        new Vocabulary("雨の中で", "sth. in the rain", "s3u16, hiragana, kanji");
+        new Vocabulary("電話", "telephone", "s3u16, kanji");
+        new Vocabulary("(に)電話します", "(to) call smb.", "s3u16, hiragana, kanji, verb");
+        new Vocabulary("メールします", "(to) mail (sth.) (to smb.)", "s3u16, hiragana, verb, katakana");
+        new Vocabulary("ノート", "notebook", "s3u16, katakana");
+        new Vocabulary("かります", "(to) borrow sth.", "s3u16, hiragana, verb");
+        new Vocabulary("マスク", "mask", "s3u16, katakana, cloth");
+        new Vocabulary("一日中", "all day long", "s3u16, kanji, time");
+        new Vocabulary("あけます", "(to) open sth.", "s3u16, hiragana, verb");
+        new Vocabulary("ぜんぜん", "not at all, at all", "s3u16, hiragana");
+        new Vocabulary("ビタミン", "vitamin", "s3u16, katakana");
+        new Vocabulary("ティッシュ", "tissue, facial tissues", "s3u16, katakana");
+        new Vocabulary("後で", "later, afterwards", "s3u16, hiragana, kanji, time");
+        new Vocabulary("ちゅうもんします", "(to) order sth., (to) place an order for sth.", "s3u16, hiragana, verb");
+        new Vocabulary("にが(い)", "bitter, bitter-tasting", "s3u16, hiragana, i_adjective, adjective");
+        new Vocabulary("(に)なります", "(to) become sth., (to) get sth.", "s3u16, hiragana, verb");
+        new Vocabulary("昨日", "yesterday", "s3u16, kanji, time");
 
         System.out.println("Writing all JSON files: 100%");
     }

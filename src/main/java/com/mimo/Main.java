@@ -41,8 +41,8 @@ public static void beginTraining(HashMap<String, List<String>> vocabularyList) {
         if(!lastUsedVocabs.contains(englishMeanings.getFirst())) {
             lastUsedVocabs.add(englishMeanings.getFirst());
 
-            String showingVocab = (startLanguage == "japanese") ? englishMeanings.toString() : japaneseMeaning;
-            String guessMeaningVocab = (startLanguage == "japanese") ? japaneseMeaning : englishMeanings.toString();
+            String showingVocab = (startLanguage.equals("japanese")) ? englishMeanings.toString() : japaneseMeaning;
+            String guessMeaningVocab = (startLanguage.equals("japanese")) ? japaneseMeaning : englishMeanings.toString();
 
             System.out.println(showingVocab);
 
