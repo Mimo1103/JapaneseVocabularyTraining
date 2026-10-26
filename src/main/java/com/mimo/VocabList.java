@@ -42,6 +42,7 @@ public class VocabList {
         //profession
         //hobby
         //furniture
+        //direction
 
 
         System.out.println("Writing all JSON files: 0%");
@@ -197,7 +198,7 @@ public class VocabList {
         Vocabulary DIRTY = new Vocabulary("きたない", "dirty, foul", "hiragana");
         Vocabulary TICKET = new Vocabulary("きっぷ", "ticket", "hiragana");
         Vocabulary YESTERDAY = new Vocabulary("きのう", "yesterday", "hiragana, time, kanjireplace");
-        Vocabulary WEAR = new Vocabulary("きます", "(to) wear sth.", "hiragana, verb");
+        Vocabulary WEAR = new Vocabulary("はきます", "(to) wear sth.", "hiragana, verb");
         Vocabulary AMBULANCE = new Vocabulary("きゅきゅしゃ", "ambulance", "hiragana");
         Vocabulary TODAY = new Vocabulary("きょう", "today", "hiragana, time, kanjireplace");
         Vocabulary CLASSROOM = new Vocabulary("きょうしつ", "classroom", "hiragana");
@@ -247,7 +248,7 @@ public class VocabList {
         Vocabulary GOODEVENING = new Vocabulary("こんばんは", "good evening", "hiragana");
         Vocabulary TONIGHT_HIR = new Vocabulary("こんや", "tonight", "hiragana, time, kanjireplace");
         Vocabulary FAMILY_POL = new Vocabulary("ごかぞく", "(your) family", "hiragana, family");
-        Vocabulary AFTERNOON = new Vocabulary("ごご", "afternoon, p.m.", "hiragana, time");
+        Vocabulary AFTERNOON = new Vocabulary("ごご", "afternoon, p.m.", "hiragana, time, kanjireplace");
         Vocabulary MORNING = new Vocabulary("ごぜん", "morning, a.m.", "hiragana, time");
         Vocabulary RICE = new Vocabulary("ごはん", "rice", "hiragana, food");
         Vocabulary YOURPARENTS = new Vocabulary("ごりょうしん", "(your) parents", "hiragana, family");
@@ -708,7 +709,7 @@ public class VocabList {
         Vocabulary tomato = new Vocabulary("トマト", "tomato", "katakana, food, vegetable, fruit");
         Vocabulary Toronto = new Vocabulary("トロント", "Toronto", "katakana");
         Vocabulary toast = new Vocabulary("トースト", "toast", "katakana, food");
-        Vocabulary door = new Vocabulary("ドア", "door", "katakana");
+        Vocabulary door = new Vocabulary("ドア", "door", "katakana, s3u17");
         Vocabulary Germany = new Vocabulary("ドイツ", "Germany, German", "katakana, country");
         Vocabulary German = new Vocabulary("ドイツご", "German", "katakana, hiragana, language");
         Vocabulary documentary = new Vocabulary("ドキュメンタリー", "documentary", "katakana");
@@ -1096,7 +1097,7 @@ public class VocabList {
         new Vocabulary("ねつ", "fever, high temperature, temperature", "s3u16, hiragana");
         new Vocabulary("かぜ", "a cold", "s3u16, hiragana");
         new Vocabulary("ひきます", "(to) catch an illness, (to) get an illness", "s3u16, hiragana, verb");
-        new Vocabulary("雨の中で", "sth. in the rain", "s3u16, hiragana, kanji");
+        new Vocabulary("雨の中で", "in the rain", "s3u16, hiragana, kanji");
         new Vocabulary("電話", "telephone", "s3u16, kanji");
         new Vocabulary("(に)電話します", "(to) call smb.", "s3u16, hiragana, kanji, verb");
         new Vocabulary("メールします", "(to) mail (sth.) (to smb.)", "s3u16, hiragana, verb, katakana");
@@ -1113,6 +1114,27 @@ public class VocabList {
         new Vocabulary("にが(い)", "bitter, bitter-tasting", "s3u16, hiragana, i_adjective, adjective");
         new Vocabulary("(に)なります", "(to) become sth., (to) get sth.", "s3u16, hiragana, verb");
         new Vocabulary("昨日", "yesterday", "s3u16, kanji, time");
+
+        new Vocabulary("もん", "gate", "s3u17, hiragana");
+        new Vocabulary("あつかった", "was hot", "s3u17, hiragana");
+        new Vocabulary("だれの", "whose", "s3u17, hiragana");
+        new Vocabulary("今月", "this month", "s3u17, kanji, time");
+        new Vocabulary("東", "east", "s3u17, kanji, direction");
+        new Vocabulary("げんかん", "entranceway, entryway", "s3u17, hiragana");
+        new Vocabulary("スリッパ", "slipper", "s3u17, katakana, cloth");
+        new Vocabulary("おくさん", "wife", "s3u17, hiragana, family");
+        new Vocabulary("午後", "in the afternoon, p.m., afternoon", "s3u17, kanji, time");
+        new Vocabulary("だんなさん", "husband", "s3u17, hiragana, family");
+        new Vocabulary("かべ", "wall", "s3u17, hiragana");
+        new Vocabulary("ペット", "pet", "s3u17, hiragana, animal");
+        new Vocabulary("ソファ", "sofa", "s3u17, katakana, furniture");
+        new Vocabulary("かぐ", "furniture", "s3u17, hiragana, furniture");
+        new Vocabulary("間", "between, while", "s3u17, kanji");
+        new Vocabulary("かびん", "vase", "s3u17, hiragana, furniture");
+        new Vocabulary("チキン", "chicken", "s3u17, katakana, animal");
+        new Vocabulary("ダイニング", "dining room", "s3u17, katakana");
+        new Vocabulary("てづくりの", "homemade, handmade", "s3u17, hiragana");
+        new Vocabulary("あらいます", "(to) wash sth.", "s3u17, verb, hiragana");
 
         System.out.println("Writing all JSON files: 100%");
     }

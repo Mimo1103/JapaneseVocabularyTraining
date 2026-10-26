@@ -26,7 +26,7 @@ public static void beginTraining(HashMap<String, List<String>> vocabularyList) {
     ArrayList<String> lastUsedVocabs = new ArrayList<>();
     String startLanguage = WriteJSON.getSettings().get("startLanguage");
 
-    int maxVocabBeforeRepeat = 0;
+    int maxVocabBeforeRepeat = (int) (size * 0.4);
     if(size > 10) {
         maxVocabBeforeRepeat = (size * 0.2 > 10) ? (int) Math.round(size * 0.2) : 10;
     }
