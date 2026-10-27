@@ -10,9 +10,9 @@ import java.util.List;
 
 public class HandlingTags {
 
-    public static HashMap<String, List<String>> createAllowedVocabList(ArrayList<String> tagList) {
+    public static List<HashMap<String, List<String>>> createAllowedVocabList(ArrayList<String> tagList) {
         String path = "src/vocabularyLists/";
-        HashMap<String, List<String>> allowedVocabList = new HashMap<>();
+
         ArrayList<String> wantList = new ArrayList<>();
         ArrayList<String> disregardList = new ArrayList<>();
 
@@ -25,6 +25,7 @@ public class HandlingTags {
             }
         }
 
+        List<HashMap<String, List<String>>> allowedVocabList = new ArrayList<>();
         //check if vocab is allowed to be trained on
         if (Vocabulary.ID != 0) {
             ObjectMapper mapper = new ObjectMapper();
@@ -44,7 +45,15 @@ public class HandlingTags {
                             wantTagsLeft--;
                         }
                     }
-                    if(wantTagsLeft == 0) {allowedVocabList.put(vocab.getJapaneseWord(), vocab.getEnglishMeanings());}
+                    if(wantTagsLeft == 0) {
+                        HashMap<String, List<String>> vocabularyInfo = new HashMap<>();
+                        vocabularyInfo.put("japaneseWord", List.of(vocab.getJapaneseWord()));
+                        vocabularyInfo.put("pronunciation", List.of(vocab.getPronounciation()));
+                        vocabularyInfo.put("englishMeanings", vocab.getEnglishMeanings());
+
+                        allowedVocabList.add(vocabularyInfo);
+
+                    }
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }

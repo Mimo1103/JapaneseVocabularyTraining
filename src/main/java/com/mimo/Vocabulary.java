@@ -8,12 +8,23 @@ import java.util.List;
 
 public class Vocabulary {
     public String JAPANESE_WORD;
+    public String JAPANESE_PRONUNCIATION = "";
     public List<String> ENGLISH_MEANINGS;
     public List<String> TAGS;
     public static int ID = 0;
 
     public Vocabulary(String japaneseWord, String englishMeanings, String tags) {
         this.JAPANESE_WORD = japaneseWord;
+        this.ENGLISH_MEANINGS = Arrays.asList(englishMeanings.split(", "));
+        this.TAGS = Arrays.asList(tags.split(", "));
+        ID++;
+
+        WriteJSON.writeVocabulary(this);
+    }
+
+    public Vocabulary(String japaneseWord, String japanesePronunciation, String englishMeanings, String tags) {
+        this.JAPANESE_WORD = japaneseWord;
+        this.JAPANESE_PRONUNCIATION = japanesePronunciation;
         this.ENGLISH_MEANINGS = Arrays.asList(englishMeanings.split(", "));
         this.TAGS = Arrays.asList(tags.split(", "));
         ID++;
@@ -59,5 +70,15 @@ public class Vocabulary {
     public int getID() {
         return ID;
     }
+
+    public void setPronounciation(String pronounciation) {
+        this.JAPANESE_PRONUNCIATION = pronounciation;
+    }
+
+    @JsonIgnore
+    public String getPronounciation() {
+        return this.JAPANESE_PRONUNCIATION;
+    }
+
     
 }

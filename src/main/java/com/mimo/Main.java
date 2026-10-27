@@ -5,9 +5,11 @@ import java.util.Scanner;
 
 public static void main(String[] args) {
 
+    WriteJSON.writeSettingsIfNeeded();
+    WriteJSON.writeVocabularyListsFolderIfNeeded();
 
     VocabList.initializingAllVocab();
-    HashMap<String, List<String>> trainingVocab = startWalkthrough();
+    List<HashMap<String, List<String>>> trainingVocab = startWalkthrough();
     beginTraining(trainingVocab);
 
 
@@ -19,7 +21,7 @@ public static void printLinearLine() {
     System.out.println("------------------------------");
 }
 
-public static void beginTraining(HashMap<String, List<String>> vocabularyList) {
+public static void beginTraining(List<HashMap<String, List<String>>> vocabularyList) {
     if(vocabularyList == null) {throw new IllegalArgumentException("vocabularyList cannot be null");}
     int size = vocabularyList.size();
     System.out.println("Size:" + size);
@@ -34,10 +36,15 @@ public static void beginTraining(HashMap<String, List<String>> vocabularyList) {
 
     Random rand = new Random();
     rand.setSeed(System.currentTimeMillis());
+
     while (true) {
         int randomVocabIndex = rand.nextInt(size);
-        String japaneseMeaning = vocabularyList.keySet().toArray()[randomVocabIndex].toString();
-        List<String> englishMeanings = vocabularyList.get(japaneseMeaning);
+
+        HashMap<String, List<String>> vocabulary = vocabularyList.get(randomVocabIndex);
+        String japaneseMeaning = vocabulary.get("japaneseWord").getFirst();
+        List<String> englishMeanings = vocabulary.get("englishMeanings");
+        String pronunciation = vocabulary.get("pronunciation").getFirst();
+
         if(!lastUsedVocabs.contains(englishMeanings.getFirst())) {
             lastUsedVocabs.add(englishMeanings.getFirst());
 
@@ -51,6 +58,15 @@ public static void beginTraining(HashMap<String, List<String>> vocabularyList) {
             if(cancelLoop(input)) {
                 break;
             } else {
+                if (showPronounciation(input)) {
+                    System.out.println(pronunciation);
+
+                    scanner = new Scanner(System.in);
+                    input = scanner.nextLine();
+                    if(cancelLoop(input)) {
+                        break;
+                    }
+                }
                 System.out.println(guessMeaningVocab);
                 printLinearLine();
             }
@@ -62,7 +78,7 @@ public static void beginTraining(HashMap<String, List<String>> vocabularyList) {
     }
 }
 
-public static HashMap<String, List<String>> startWalkthrough() {
+public static List<HashMap<String, List<String>>> startWalkthrough() {
     printLinearLine();
     System.out.println("Would you like to start training or change the settings?");
     System.out.println("1. Train Vocabulary");
@@ -144,6 +160,11 @@ public static HashMap<String, List<String>> startWalkthrough() {
     }
     startWalkthrough();
     return null;
+}
+
+public static boolean showPronounciation(String userInput) {
+    String[] pronounciationWords = {"pronounciation", "p", "info", "information", "i"};
+    return (Arrays.stream(pronounciationWords).toList().contains(userInput.toLowerCase()));
 }
 
 public static boolean cancelLoop(String userInput) {

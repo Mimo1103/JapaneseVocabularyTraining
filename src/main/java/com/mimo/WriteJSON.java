@@ -24,21 +24,34 @@ public class WriteJSON {
         }
     }
 
-    public static void writeSettings() {
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-            String path = "src/";
-            String fileName = "settings.json";
-            File file = new File(path + fileName);
+    public static void writeSettingsIfNeeded() {
+        String path = "src/";
+        String fileName = "settings.json";
 
-            ObjectNode json = mapper.createObjectNode();
-            json.put("startLanguage", "Japanese");
-            json.put("lastUsedTags", "#kanji!kanjireplace");
-            json.put("askForNewTags", "false");
+        File settings = new File(path + fileName);
+        if(!settings.exists()) {
+            ObjectMapper mapper = new ObjectMapper();
+            try {
 
-            mapper.writeValue(file, json);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+                ObjectNode json = mapper.createObjectNode();
+                json.put("startLanguage", "Japanese");
+                json.put("lastUsedTags", "#kanji!kanjireplace");
+                json.put("askForNewTags", "true");
+
+                mapper.writeValue(settings, json);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    public static void writeVocabularyListsFolderIfNeeded() {
+        String path = "src/";
+        String fileName = "vocabularyLists";
+
+        File vocabularyLists = new File(path + fileName);
+        if(!vocabularyLists.exists()) {
+            vocabularyLists.mkdir();
         }
     }
 
