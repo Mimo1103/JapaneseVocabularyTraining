@@ -63,7 +63,7 @@ public class VocabList {
         Vocabulary AKIHABARA = new Vocabulary("あきはばら", "Akihabara", "hiragana");
         Vocabulary OPEN = new Vocabulary("あきます", "(to) open sth.", "hiragana, verb");
         Vocabulary ASAKUSA = new Vocabulary("あさくさ", "Asakusa", "hiragana");
-        Vocabulary BREAKFAST = new Vocabulary("あさごはん", "breakfast", "hiragana, food");
+        Vocabulary BREAKFAST = new Vocabulary("あさごはん", "breakfast", "hiragana, food, kanjireplace");
         Vocabulary LEG = new Vocabulary("あし", "leg", "hiragana, bodypart");
         Vocabulary TOMORROW = new Vocabulary("あした", "tomorrow", "hiragana, kanjireplace, time");
         Vocabulary OVERTHERE = new Vocabulary("あそこ", "(over) there", "hiragana");
@@ -401,7 +401,7 @@ public class VocabList {
         Vocabulary BIRD = new Vocabulary("とり", "bird", "hiragana, animal");
         Vocabulary GET = new Vocabulary("とります", "(to) get sth., (to) take sth.", "hiragana, verb");
         Vocabulary PORKCUTLETS = new Vocabulary("とんかつ", "pork cutlets", "hiragana, food");
-        Vocabulary ISCALLED = new Vocabulary("と言います", "(to) be called sth.", "hiragana, kanji, verb");
+        Vocabulary ISCALLED = new Vocabulary("と言います", "(to) be called sth., (to) tell sb. sth.", "hiragana, kanji, verb, s3u18");
         Vocabulary HOW = new Vocabulary("どう", "how", "hiragana");
         Vocabulary VIDEO = new Vocabulary("どうが", "video", "hiragana");
         Vocabulary HOWABOUT = new Vocabulary("どうですか", "How about sth./sb.", "hiragana");
@@ -509,7 +509,7 @@ public class VocabList {
         Vocabulary FRONT = new Vocabulary("まえ", "front", "hiragana, kanjireplace");
         Vocabulary SERIOUS = new Vocabulary("まじめ", "serious", "hiragana");
         Vocabulary FIRST = new Vocabulary("まず", "first", "hiragana, time");
-        Vocabulary TASTEBAD = new Vocabulary("まずい", "sth. tastes bad, bad", "hiragana");
+        Vocabulary TASTEBAD = new Vocabulary("まずい", "sth. tastes bad, bad, awful", "hiragana");
         Vocabulary AGAIN = new Vocabulary("また", "again", "hiragana, time");
         Vocabulary SEEYOUTOMORROW = new Vocabulary("またあした", "see you tomorrow", "hiragana");
         Vocabulary TOWN = new Vocabulary("まち", "town", "hiragana");
@@ -535,7 +535,7 @@ public class VocabList {
         Vocabulary FREE_MON = new Vocabulary("みりょう", "free (money)", "hiragana");
         Vocabulary EYE = new Vocabulary("め", "eye", "hiragana, bodypart");
         Vocabulary EVEN = new Vocabulary("も", "even, any, also", "hiragana");
-        Vocabulary LETS = new Vocabulary("もう", "yet, now, let's", "hiragana");
+        Vocabulary LETS = new Vocabulary("もう", "yet, now, let's, no longer", "hiragana, s3u18");
         Vocabulary VERYSOON = new Vocabulary("もうすぐ", "very soon", "hiragana, time");
         Vocabulary ALITTLEMORE = new Vocabulary("もうすこし", "a little more", "hiragana");
         Vocabulary MORE = new Vocabulary("もっと", "more", "hiragana");
@@ -1076,7 +1076,7 @@ public class VocabList {
         new Vocabulary("りょかん", "inn, ryokan", "s3u15, hiragana");
         new Vocabulary("二日間", "ふつかかん","two days (long)", "s3u15, kanji, time");
         new Vocabulary("もり", "forest", "s3u15, hiragana");
-        new Vocabulary("りっぱ(な)", "splendid, fine", "s3u15, hiragana, na_adjective, adjective");
+        new Vocabulary("りっぱ(な)", "splendid, fine, impressive", "s3u15, hiragana, na_adjective, adjective");
         new Vocabulary("さんぽします", "(to) take a walk, (to) go on a walk", "s3u15, hiragana, verb");
         new Vocabulary("まわり", "the surrounding area, surroundings, area", "s3u15, hiragana");
         new Vocabulary("たたみ", "tatami, mat", "s3u15, hiragana, furniture");
@@ -1135,6 +1135,27 @@ public class VocabList {
         new Vocabulary("ダイニング", "dining room", "s3u17, katakana");
         new Vocabulary("てづくりの", "homemade, handmade", "s3u17, hiragana");
         new Vocabulary("あらいます", "(to) wash sth.", "s3u17, verb, hiragana");
+
+        new Vocabulary ("ゴミ", "garbage, trash", "s3u18, katakana");
+        new Vocabulary ("西", "にし", "west", "s3u18, kanji, direction");
+        new Vocabulary ("四日間", "よっかかん","four days long", "s3u18, kanji, time");
+        new Vocabulary ("こうこく", "ad, advertisement", "s3u18, hiragana");
+        new Vocabulary ("シャトルバス", "shuttle bus, shuttle", "s3u18, katakana");
+        new Vocabulary ("ゴミの山", "ゴミのやま","trash mountain", "s3u18, katakana, hiragana, kanji");
+        new Vocabulary ("カーテン", "curtain", "s3u18, katakana, furniture");
+        new Vocabulary ("ゴキブリ", "cockroach, roach", "s3u18, katakana, animal");
+        new Vocabulary ("六階", "ろっかい","sixth floor", "s3u18, kanji");
+        new Vocabulary ("うすい", "thin", "s3u18, hiragana, adjective, i_adjective");
+        new Vocabulary ("トイレ", "toilet, restroom", "s3u18, katakana");
+        new Vocabulary ("シャフー", "shower", "s3u18, katakana");
+        new Vocabulary ("うけつけの人", "receptionist", "s3u18, hiragana, kanji, profession");
+        new Vocabulary ("めるい", "lukewarm, tepid", "s3u18, hiragana, adjective, i_adjective");
+        new Vocabulary ("シャンプー", "shampoo", "s3u18, katakana");
+        new Vocabulary ("シリアル", "cereal", "s3u18, katakana, food");
+        new Vocabulary ("朝ご飯", "あさごはん","breakfast", "s3u18, kanji, food");
+        new Vocabulary ("ベタベタ", "sticky", "s3u18, katakana, adjective, na_adjective, adverb");
+        new Vocabulary ("わるい", "bad, negative", "s3u18, hiragana");
+        new Vocabulary ("ほかの", "other", "s3u18, hiragana");
 
         System.out.println("Writing all JSON files: 100%");
     }

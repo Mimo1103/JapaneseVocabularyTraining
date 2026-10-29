@@ -59,7 +59,8 @@ public static void beginTraining(List<HashMap<String, List<String>>> vocabularyL
                 break;
             } else {
                 if (showPronounciation(input)) {
-                    System.out.println(pronunciation);
+                    String output = (pronunciation.isEmpty()) ? "No pronunciation given" : pronunciation;
+                    System.out.println(output);
 
                     scanner = new Scanner(System.in);
                     input = scanner.nextLine();
