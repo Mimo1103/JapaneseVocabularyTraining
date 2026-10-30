@@ -53,36 +53,40 @@ public static void beginTraining(List<HashMap<String, List<String>>> vocabularyL
 
             System.out.println(showingVocab);
 
-            Scanner scanner = new Scanner(System.in);
-            String input = scanner.nextLine();
+            boolean isTraining = true;
+            boolean stopTraining = false;
+            while(isTraining) {
+                Scanner scanner = new Scanner(System.in);
+                String input = scanner.nextLine();
 
-            switch(customUserInput(input)) {
-                case "pronunciation":
-                    String output = (pronunciation.isEmpty()) ? "No pronunciation given" : pronunciation;
-                    System.out.println(output);
 
-                    scanner = new Scanner(System.in);
-                    input = scanner.nextLine();
-                    if(cancelLoop(input)) {
+                switch(customUserInput(input)) {
+                    case "pronunciation":
+                        String output = (pronunciation.isEmpty()) ? "No pronunciation given" : pronunciation;
+                        System.out.println(output);
                         break;
-                    }
 
-                case "quit":
-                    break;
-
-                case "tag":
-                    List<String> tags = WriteJSON.getTagsByJapaneseMeaning(japaneseMeaning);
-                    System.out.println(tags);
-
-                    scanner = new Scanner(System.in);
-                    input = scanner.nextLine();
-                    if(cancelLoop(input)) {
+                    case "quit":
+                        printLinearLine();
+                        isTraining = false;
+                        stopTraining = true;
                         break;
-                    }
 
+                    case "tag":
+                        List<String> tags = WriteJSON.getTagsByJapaneseMeaning(japaneseMeaning);
+                        System.out.println(tags);
+                        break;
 
-                System.out.println(guessMeaningVocab);
-                printLinearLine();
+                    default:
+                        System.out.println(guessMeaningVocab);
+                        printLinearLine();
+                        isTraining = false;
+                        break;
+                }
+            }
+
+            if(stopTraining) {
+                break;
             }
 
             if(lastUsedVocabs.size() >= maxVocabBeforeRepeat) {
@@ -181,7 +185,7 @@ public static String customUserInput(String userInput) {
     String[] tagWords = {"t", "tag", "tags"};
     if(Arrays.stream(pronunciationWords).toList().contains(userInput.toLowerCase())) {
         return "pronunciation";
-    } else if(cancelLoop(userInput)) {
+    } else if(cancelLoop(userInput.toLowerCase())) {
         return "quit";
     } else if(Arrays.stream(tagWords).toList().contains(userInput.toLowerCase())) {
         return "tag";
