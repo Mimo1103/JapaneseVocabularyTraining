@@ -55,10 +55,9 @@ public static void beginTraining(List<HashMap<String, List<String>>> vocabularyL
 
             Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine();
-            if(cancelLoop(input)) {
-                break;
-            } else {
-                if (showPronounciation(input)) {
+
+            switch(customUserInput(input)) {
+                case "pronunciation":
                     String output = (pronunciation.isEmpty()) ? "No pronunciation given" : pronunciation;
                     System.out.println(output);
 
@@ -67,7 +66,21 @@ public static void beginTraining(List<HashMap<String, List<String>>> vocabularyL
                     if(cancelLoop(input)) {
                         break;
                     }
-                }
+
+                case "quit":
+                    break;
+
+                case "tag":
+                    List<String> tags = WriteJSON.getTagsByJapaneseMeaning(japaneseMeaning);
+                    System.out.println(tags);
+
+                    scanner = new Scanner(System.in);
+                    input = scanner.nextLine();
+                    if(cancelLoop(input)) {
+                        break;
+                    }
+
+
                 System.out.println(guessMeaningVocab);
                 printLinearLine();
             }
@@ -163,9 +176,17 @@ public static List<HashMap<String, List<String>>> startWalkthrough() {
     return null;
 }
 
-public static boolean showPronounciation(String userInput) {
-    String[] pronounciationWords = {"pronounciation", "p", "info", "information", "i"};
-    return (Arrays.stream(pronounciationWords).toList().contains(userInput.toLowerCase()));
+public static String customUserInput(String userInput) {
+    String[] pronunciationWords = {"pronunciation", "p", "info", "information", "i", "pronunciations"};
+    String[] tagWords = {"t", "tag", "tags"};
+    if(Arrays.stream(pronunciationWords).toList().contains(userInput.toLowerCase())) {
+        return "pronunciation";
+    } else if(cancelLoop(userInput)) {
+        return "quit";
+    } else if(Arrays.stream(tagWords).toList().contains(userInput.toLowerCase())) {
+        return "tag";
+    }
+    return "";
 }
 
 public static boolean cancelLoop(String userInput) {

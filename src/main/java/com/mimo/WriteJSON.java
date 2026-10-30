@@ -5,8 +5,10 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class WriteJSON {
 
@@ -139,6 +141,24 @@ public class WriteJSON {
             System.out.println("Invalid input. Select either 'y' or 'n'.");
         }
 
+    }
+
+    public static List<String> getTagsByJapaneseMeaning(String japaneseMeaning) {
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            String path = "src/vocabularyLists/";
+            int i = 1;
+            while(true) {
+                File file = new File(path + i + ".json");
+                Vocabulary vocabInfo = mapper.readValue(file, Vocabulary.class);
+                if(vocabInfo.getJapaneseWord().equals(japaneseMeaning)) {
+                    return vocabInfo.getTags();
+                }
+                i++;
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
