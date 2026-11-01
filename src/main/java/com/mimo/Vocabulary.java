@@ -19,7 +19,7 @@ public class Vocabulary {
         this.TAGS = Arrays.asList(tags.split(", "));
         ID++;
 
-        WriteJSON.writeVocabulary(this);
+        HandleJSON.writeVocabulary(this);
     }
 
     public Vocabulary(String japaneseWord, String japanesePronunciation, String englishMeanings, String tags) {
@@ -29,7 +29,7 @@ public class Vocabulary {
         this.TAGS = Arrays.asList(tags.split(", "));
         ID++;
 
-        WriteJSON.writeVocabulary(this);
+        HandleJSON.writeVocabulary(this);
     }
 
     //Empty constructor for Jackson
@@ -78,6 +78,20 @@ public class Vocabulary {
     @JsonIgnore
     public String getPronounciation() {
         return this.JAPANESE_PRONUNCIATION;
+    }
+
+    @JsonIgnore
+    public boolean matchesString(String string) {
+        if(this.getJapaneseWord().equals(string) || this.getJapaneseWord().contains(string)) {
+            return true;
+        }
+        List<String> englishMeanings = this.getEnglishMeanings();
+        for(String englishMeaning : englishMeanings) {
+            if(englishMeaning.equals(string) || englishMeanings.contains(string)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     

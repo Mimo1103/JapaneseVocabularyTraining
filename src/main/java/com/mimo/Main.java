@@ -1,12 +1,14 @@
 import com.mimo.HandlingTags;
 import com.mimo.VocabList;
-import com.mimo.WriteJSON;
+import com.mimo.HandleJSON;
+import com.mimo.Vocabulary;
+
 import java.util.Scanner;
 
 public static void main(String[] args) {
 
-    WriteJSON.writeSettingsIfNeeded();
-    WriteJSON.writeVocabularyListsFolderIfNeeded();
+    HandleJSON.writeSettingsIfNeeded();
+    HandleJSON.writeVocabularyListsFolderIfNeeded();
 
     VocabList.initializingAllVocab();
     List<HashMap<String, List<String>>> trainingVocab = startWalkthrough();
@@ -26,7 +28,7 @@ public static void beginTraining(List<HashMap<String, List<String>>> vocabularyL
     int size = vocabularyList.size();
     System.out.println("Size:" + size);
     ArrayList<String> lastUsedVocabs = new ArrayList<>();
-    String startLanguage = WriteJSON.getSettings().get("startLanguage");
+    String startLanguage = HandleJSON.getSettings().get("startLanguage");
 
     int maxVocabBeforeRepeat = (int) (size * 0.4);
     if(size > 10) {
@@ -44,6 +46,7 @@ public static void beginTraining(List<HashMap<String, List<String>>> vocabularyL
         String japaneseMeaning = vocabulary.get("japaneseWord").getFirst();
         List<String> englishMeanings = vocabulary.get("englishMeanings");
         String pronunciation = vocabulary.get("pronunciation").getFirst();
+        List<String> tags = vocabulary.get("tags");
 
         if(!lastUsedVocabs.contains(englishMeanings.getFirst())) {
             lastUsedVocabs.add(englishMeanings.getFirst());
@@ -73,7 +76,6 @@ public static void beginTraining(List<HashMap<String, List<String>>> vocabularyL
                         break;
 
                     case "tag":
-                        List<String> tags = WriteJSON.getTagsByJapaneseMeaning(japaneseMeaning);
                         System.out.println(tags);
                         break;
 
@@ -101,6 +103,7 @@ public static List<HashMap<String, List<String>>> startWalkthrough() {
     System.out.println("Would you like to start training or change the settings?");
     System.out.println("1. Train Vocabulary");
     System.out.println("2. Change Settings");
+    System.out.println("3. Search Vocabulary");
     Scanner scanner = new Scanner(System.in);
     String userInput = scanner.nextLine();
 
@@ -108,10 +111,10 @@ public static List<HashMap<String, List<String>>> startWalkthrough() {
 
     switch (userInput.trim()) {
         case "1":
-            String lastUsedTags = WriteJSON.getSettings().get("lastUsedTags");
-            if(WriteJSON.getSettings().get("askForNewTags").equals("true")) {
-                WriteJSON.setLastUsedTags(handlingUserTagsInput());
-                lastUsedTags = WriteJSON.getSettings().get("lastUsedTags");
+            String lastUsedTags = HandleJSON.getSettings().get("lastUsedTags");
+            if(HandleJSON.getSettings().get("askForNewTags").equals("true")) {
+                HandleJSON.setLastUsedTags(handlingUserTagsInput());
+                lastUsedTags = HandleJSON.getSettings().get("lastUsedTags");
             }
 
             System.out.println("Selected tags:" + lastUsedTags);
@@ -133,33 +136,33 @@ public static List<HashMap<String, List<String>>> startWalkthrough() {
             String configUserInput;
             switch (settingsUserInput) {
                 case "1":
-                    System.out.println("Current start language: " + WriteJSON.getSettings().get("startLanguage"));
+                    System.out.println("Current start language: " + HandleJSON.getSettings().get("startLanguage"));
                     System.out.print("New start language: ");
                     configUserInput = scanner.nextLine();
-                    WriteJSON.setStartLanguage(configUserInput);
+                    HandleJSON.setStartLanguage(configUserInput);
                     break;
 
                 case "2":
-                    System.out.println("Current tags to search / disregard for: " + WriteJSON.getSettings().get("lastUsedTags"));
+                    System.out.println("Current tags to search / disregard for: " + HandleJSON.getSettings().get("lastUsedTags"));
                     System.out.println("Existing tags:     hiragana, katakana, kanji, verb, music, color, language, country, family,\n" +
                             "bodypart, food, vegetable, fruit, drink, animal, month, cloth, sport, adjective, na_adjective, i_adjective, time, \n" +
                             "temperature, weather, profession, hobby, furniture, kanjireplace");
                     System.out.print("New tags to search / disregard for: ");
                     configUserInput = scanner.nextLine();
-                    WriteJSON.setLastUsedTags(configUserInput);
+                    HandleJSON.setLastUsedTags(configUserInput);
                     break;
 
                 case "3":
-                    System.out.println("Ask for new tags at start of training: " + WriteJSON.getSettings().get("askForNewTags"));
+                    System.out.println("Ask for new tags at start of training: " + HandleJSON.getSettings().get("askForNewTags"));
                     System.out.println("Should it ask for new tags at start of training? (Y/N)");
                     configUserInput = scanner.nextLine();
-                    WriteJSON.setAskForNewTags(configUserInput);
+                    HandleJSON.setAskForNewTags(configUserInput);
                     break;
 
                 case "4":
-                    System.out.println("Current start language: " + WriteJSON.getSettings().get("startLanguage"));
-                    System.out.println("Current tags to search / disregard for: " + WriteJSON.getSettings().get("lastUsedTags"));
-                    System.out.println("Ask for new tags at start of training: " + WriteJSON.getSettings().get("askForNewTags"));
+                    System.out.println("Current start language: " + HandleJSON.getSettings().get("startLanguage"));
+                    System.out.println("Current tags to search / disregard for: " + HandleJSON.getSettings().get("lastUsedTags"));
+                    System.out.println("Ask for new tags at start of training: " + HandleJSON.getSettings().get("askForNewTags"));
                     break;
 
                 default:
@@ -168,11 +171,23 @@ public static List<HashMap<String, List<String>>> startWalkthrough() {
                     break;
             }
             break;
+        case "3":
+            System.out.println("Search vocabulary by the Japanese word or English meaning:");
+            Scanner searchScanner = new Scanner(System.in);
+            String searchUserInput = searchScanner.nextLine();
+
+            printLinearLine();
+            System.out.println("Word(s) found:");
+            List<Vocabulary> foundVocab = HandleJSON.searchVocabByString(searchUserInput);
+            for(Vocabulary vocab : foundVocab) {
+                System.out.println(vocab.getJapaneseWord() + " : " + vocab.getEnglishMeanings());
+            }
+            break;
         default:
             if(cancelLoop(userInput)) {
                 throw  new RuntimeException("Ended program");
             }
-            System.out.println("Invalid input. Select '1' or '2'.");
+            System.out.println("Invalid input. Select '1', '2' or '3'.");
             startWalkthrough();
             break;
     }
@@ -181,7 +196,7 @@ public static List<HashMap<String, List<String>>> startWalkthrough() {
 }
 
 public static String customUserInput(String userInput) {
-    String[] pronunciationWords = {"pronunciation", "p", "info", "information", "i", "pronunciations"};
+    String[] pronunciationWords = {"pronunciation", "p", "pronunciations"};
     String[] tagWords = {"t", "tag", "tags"};
     if(Arrays.stream(pronunciationWords).toList().contains(userInput.toLowerCase())) {
         return "pronunciation";

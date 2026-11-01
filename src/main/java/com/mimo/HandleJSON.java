@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-public class WriteJSON {
+public class HandleJSON {
 
     public static void writeVocabulary(Vocabulary vocabulary) {
         ObjectMapper mapper = new ObjectMapper();
@@ -143,19 +143,33 @@ public class WriteJSON {
 
     }
 
-    public static List<String> getTagsByJapaneseMeaning(String japaneseMeaning) {
+    public static List<Vocabulary> searchVocabByString(String word) {
         ObjectMapper mapper = new ObjectMapper();
         try {
             String path = "src/vocabularyLists/";
+            List<Vocabulary> searchedVocab = new ArrayList<>();
+            boolean stillSearching = true;
             int i = 1;
-            while(true) {
-                File file = new File(path + i + ".json");
-                Vocabulary vocabInfo = mapper.readValue(file, Vocabulary.class);
-                if(vocabInfo.getJapaneseWord().equals(japaneseMeaning)) {
-                    return vocabInfo.getTags();
+            while(stillSearching) {
+                if(new File(path + i + ".json").exists()) {
+                    File file = new File(path + i + ".json");
+                    Vocabulary vocabInfo = mapper.readValue(file, Vocabulary.class);
+                    if(vocabInfo.getJapaneseWord().contains(word.toLowerCase()) || vocabInfo.getJapaneseWord().equals(word.toLowerCase())) {
+                        searchedVocab.add(vocabInfo);
+                    } else {
+                        List<String> englishMeanings = vocabInfo.getEnglishMeanings();
+                        for(int j = 0; j < englishMeanings.size(); j++) {
+                            if(englishMeanings.get(j).toLowerCase().contains(word.toLowerCase()) || englishMeanings.get(j).toLowerCase().equals(word.toLowerCase())) {
+                                searchedVocab.add(vocabInfo);
+                            }
+                        }
+                    }
+                    i++;
+                } else {
+                    stillSearching = false;
                 }
-                i++;
             }
+            return searchedVocab;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

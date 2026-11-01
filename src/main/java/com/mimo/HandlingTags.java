@@ -2,6 +2,7 @@ package com.mimo;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import javax.management.RuntimeErrorException;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,13 +16,24 @@ public class HandlingTags {
 
         ArrayList<String> wantList = new ArrayList<>();
         ArrayList<String> disregardList = new ArrayList<>();
+        ArrayList<String> searchList = new ArrayList<>();
 
         //split tagList into wantList and disregardList
         for(String tag : tagList) {
             if(tag.startsWith("#")) {
                 wantList.add(tag.toLowerCase().replace("#", ""));
-            } else {
+            } else if(tag.startsWith("!")) {
                 disregardList.add(tag.toLowerCase().replace("!", ""));
+            } else if(tag.startsWith("?")) {
+                searchList.add(tag.toLowerCase().replace("?", ""));
+            }
+        }
+        
+        if(searchList.size() > 1) {
+            try {
+                throw new RuntimeException("Can only have 1 active search filter active via '?'");
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
         }
 
@@ -36,6 +48,7 @@ public class HandlingTags {
                 try {
                     Vocabulary vocab = mapper.readValue(new File(filepath), Vocabulary.class);
                     int wantTagsLeft = wantList.size();
+
                     for(String vocabTag : vocab.getTags()) {
                         if(disregardList.contains(vocabTag)) {
                             wantTagsLeft += 999;
@@ -45,11 +58,12 @@ public class HandlingTags {
                             wantTagsLeft--;
                         }
                     }
-                    if(wantTagsLeft == 0) {
+                    if(wantTagsLeft == 0 && vocab.matchesString(searchList.get(0))) {
                         HashMap<String, List<String>> vocabularyInfo = new HashMap<>();
                         vocabularyInfo.put("japaneseWord", List.of(vocab.getJapaneseWord()));
                         vocabularyInfo.put("pronunciation", List.of(vocab.getPronounciation()));
                         vocabularyInfo.put("englishMeanings", vocab.getEnglishMeanings());
+                        vocabularyInfo.put("tags", vocab.getTags());
 
                         allowedVocabList.add(vocabularyInfo);
 
@@ -71,7 +85,7 @@ public class HandlingTags {
         boolean isFirstLetter = true;
 
         for (char letter : input.toCharArray()) {
-            if(letter == '#' || letter == '!') {
+            if(letter == '#' || letter == '!' || letter == '?') {
                 if(!isFirstLetter) {
                     result.add(tag);
                     tag = "";
