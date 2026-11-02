@@ -1182,6 +1182,21 @@ public class VocabList {
         new Vocabulary("もんだい", "problem", "s3u19, hiragana");
         new Vocabulary("わかれます", "(to) break up (with sb.)", "s3u19, hiragana, verb");
 
+        new Vocabulary("しんろう", "groom", "s3u20, hiragana");
+        new Vocabulary("六日", "むいか", "the sixth, 6th, 6 days", "s3u20, kanji");
+        new Vocabulary("おととい", "the day before yesterday, two days ago", "s3u20, hiragana");
+        new Vocabulary("けっこんしき", "wedding ceremony", "s3u20, hiragana");
+        new Vocabulary("かいじょう", "venue", "s3u20, hiragana");
+        new Vocabulary("花", "はな","flower", "s3u20, kanji");
+        new Vocabulary("カーペット", "carpet", "s3u20, katakana");
+        new Vocabulary("色", "いろ", "color", "s3u20, kanji, color");
+        new Vocabulary("うつくしい", "beautiful", "s3u20, hiragana, adjective, i_adjective");
+        new Vocabulary("あいさつします", "(to) greet (sb.), (to) say hello (to sb.)", "s3u20, hiragana, verb");
+        new Vocabulary("ゲスト", "guest", "s3u20, katakana");
+        new Vocabulary("しんぷ", "bride", "s3u20, hiragana");
+        new Vocabulary("しんせき", "relative", "s3u20, hiragana");
+    
+
         System.out.println("Writing all JSON files: 100%");
     }
 }
